@@ -1,6 +1,6 @@
 # Up Down Left Right
 
-`up-down-left-right` is a portfolio theme for WordPress
+`up-down-left-right` is a blogging theme for WordPress
 
 ![Screentshot of Up Down Left Right, a WordPress theme](screenshot.png?raw=true)
 
