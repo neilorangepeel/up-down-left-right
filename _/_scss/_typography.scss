@@ -1,0 +1,140 @@
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic,700italic|Press+Start+2P);
+ @font-face {
+  font-family: 'eightbiticons';
+  src: url('_/_type/eightbiticons.eot?50732137');
+  src: url('_/_type/eightbiticons.eot?50732137#iefix') format('embedded-opentype'),
+       url('_/_type/eightbiticons.woff?50732137') format('woff'),
+       url('_/_type/eightbiticons.ttf?50732137') format('truetype'),
+       url('_/_type/eightbiticons.svg?50732137#eightbiticons') format('svg');
+}
+@mixin press-start {
+  font-family: 'Press Start 2P', Monaco,  monospace;
+}
+html {
+  font: normal 112.5%/1.6 serif;
+  cursor: url(_/_images/cursor.svg), auto;
+  a {
+    cursor: url(_/_images/pointer.svg), auto;
+  }
+}
+body {
+  font-family: 'Source Sans Pro', "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+h1,h2,h3,h4,h5,h6 {
+  font-weight: 700;
+  line-height: 1.2em;
+  margin-bottom: 0.4em;
+}
+h1, .h1 {
+  font-size: 2.2em;
+}
+h2, .h2 {
+  font-size: 2em;
+}
+h3, .h3 {
+  font-size: 1.6em;
+}
+h4, .h4 {
+  font-size: 1.2em;
+}
+h5, .h5, h6, .h6 {
+  font-size: 1em;
+}
+p {
+  margin-bottom: 1.6em;
+}
+p+h1, p+h2, p+h3, p+h4, p+h5, p+h6 {
+  margin-top: 1.6em;
+}
+a {
+  color: inherit;
+  text-decoration: underline;
+}
+ul, ol, ul ul, ul ol, ol ol, ol ul {
+  padding-left: 1.2em;
+  margin-bottom: 1.6em;
+}
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+.article {
+  ol, ul {
+    counter-reset:li;
+    list-style: none;
+
+    li {
+      position: relative;
+      &:before {
+        position: absolute;
+        font-size: 0.9em;
+        left: -1.4em;
+        top: 0.1em;
+        color: $blue;
+      }
+    }
+  }
+  ol li:before {
+    content:counter(li);
+    counter-increment:li;
+    @include press-start;
+  }
+  ul li:before {
+    content:';';
+    font-family: 'eightbiticons';
+  }
+}
+blockquote {
+  text-align: right;
+  padding: 5% 5% 5% 0;
+  color: $darkRed;
+  font-size: 1.2em;
+  @include press-start;
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  cite {
+    font-family: 'Source Sans Pro', "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-size: 0.8em;
+    font-style: normal;
+    font-weight: 700;
+    color: #BCBCBC;
+  }
+}
+hr {
+  border: none;
+  margin-bottom: 1.6em;
+
+  &:before {
+    content: '0 0 > =';
+    display: block;
+    font-family: 'eightbiticons';
+    font-size: 1.6em;
+    text-align: center;
+    color: #DA0046;
+  }
+}
+.btn, .wpcf7-submit {
+    background: $green;
+    padding: 1em;
+    @include press-start;
+    text-transform: uppercase;
+    color: white;
+    border:none;
+    width: auto;
+    cursor: url(_/_images/pointer.svg), auto;
+
+    &:hover, &:focus {
+      background: black;
+    }
+}
+[data-icon]::before {
+  position: relative;
+  content: attr(data-icon);
+  font-family: 'eightbiticons';
+  font-weight: 400 !important;
+  font-style: normal;
+  text-transform: none;
+  line-height: 0;
+}
